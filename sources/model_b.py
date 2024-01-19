@@ -1,7 +1,7 @@
 import random
 import salabim as sim
 
-from salabim_flex_plant import *
+from salabim_plant import *
 
 colors = ["red", "orange", "green", "tomato", "olive", "gold", "indigo", "pink", "purple", "orchid", "teal", "brown"]
 

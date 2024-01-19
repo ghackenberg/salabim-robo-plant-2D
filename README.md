@@ -1,4 +1,4 @@
-# salabim-flex-plant
+# salabim-plant
 
 This project provides a framework for **Plant Simulation** with [Python](https://www.python.org/) based on the amazing [Salabim](https://www.salabim.org/) package. Note that Salabim provides easy to use **Discrete Event Simulation** as well as **2D / 3D Visualization** capabilities for Python programmers. Consequently, you can build industrial grade simulation environments base on this software stack. Feel free to contact us for more information about our framework and its application to real-world scenarios!
 
@@ -24,7 +24,7 @@ Here is an example of how to use our plant simulation package. Note that this is
 
 ```python
 import salabim
-import salabim_flex_plant
+import salabim_plant
 
 # Create simulation environment
 env = salabim.Environment()
@@ -36,13 +36,13 @@ env.height(600)
 env.position((100, 100))
 
 # Create robot
-robot = salabim_flex_plant.Robot(
-    base_position = salabim_flex_plant.Vector(400, 300),
+robot = salabim_plant.Robot(
+    base_position = salabim_plant.Vector(400, 300),
     base_angle = 0
 )
 s
 # Create product grabbed by robot
-product = salabim_flex_plant.Product(
+product = salabim_plant.Product(
     position_controller = robot,
     color = "blue"
 )
