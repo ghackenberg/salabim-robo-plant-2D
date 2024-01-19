@@ -1,1 +1,4 @@
 salabim
+greenlet
+Pillow
+opencv-python
