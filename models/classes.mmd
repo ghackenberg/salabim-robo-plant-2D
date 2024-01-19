@@ -1,0 +1,77 @@
+classDiagram
+
+    State <.. Component
+
+    Environment *-- State
+    Environment *-- Component
+    Environment *-- Store
+
+    Store <.. Component
+
+    Component <|-- Product
+    Component <|-- Machine
+    Component <|-- Robot
+    Component <|-- Conveyor
+
+    Product ..> Vector
+    Machine ..> Vector
+    Robot ..> Vector
+    Conveyor ..> Vector
+
+    namespace salabim {
+        class Environment {
+            +animate(value: bool): void
+            +width(value: int): void
+            +height(value: int): void
+            +position(...): void
+            +run(...): void
+        }
+        class State {
+            get(): any
+            set(value: any): void
+        }
+        class Component {
+            +process(): void
+            +from_store(store: Store): any
+            +to_store(store: Store, value: any): void
+            +hold(duration: float): void
+            +wait(...): void
+        }
+        class Store {
+            +capacity: int
+        }
+    }
+
+    namespace salabim_flex_plant {
+        class Product {
+            +position_controller: any
+            +setup(position_controller: any, color: str)
+        }
+        class Machine {
+            +state: salabim.State
+            +setup(position: Vector): void
+        }
+        class Robot {
+            +state: salabim.State
+            +setup(base_position: Vector, base_angle: float)
+            +move_to(joint_angles: float[], duration: float)
+        }
+        class Conveyor {
+            +empty_source: salabim.State
+            +empty_target: salabim.State
+            +setup(source_position: Vector, target_position: Vector): void
+            +drop(product: Product): void
+            +take(): Product
+        }
+        class Vector {
+            +x: float
+            +y: float
+            +add(other: Vector): Vector
+            +substract(other: Vector): Vector
+            +multiply(scalar: float): Vector
+            +divide(scalar: float): Vector
+            +dot(other: Vector): float
+            length(): float
+            normalize(): Vector
+        }
+    }

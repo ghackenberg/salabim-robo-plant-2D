@@ -139,7 +139,7 @@ robot2 = RobotB(base_position = Vector(400, 100), base_angle = 0)
 robot3 = RobotC(base_position = Vector(700, 100), base_angle = 0)
 
 # Start simulation with/without video production
-if True:
+if False:
     # Video production disabled
     env.run(sim.inf)
 else:
