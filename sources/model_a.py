@@ -1,6 +1,6 @@
 import salabim as sim
 
-from twinpy import *
+from salabim_flex_plant import *
 
 class RobotA(Robot):
     def process(self):

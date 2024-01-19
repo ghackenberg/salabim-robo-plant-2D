@@ -1,7 +1,7 @@
 import random
 import salabim as sim
 
-from twinpy import *
+from salabim_flex_plant import *
 
 colors = ["red", "orange", "green", "tomato", "olive", "gold", "indigo", "pink", "purple", "orchid", "teal", "brown"]
 
