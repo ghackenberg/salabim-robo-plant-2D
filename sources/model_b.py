@@ -106,6 +106,7 @@ class RobotC(Robot):
 # Create simulation environment
 env = sim.Environment()
 env.modelname("Robotereinsatzplanung")
+env.speed(10)
 
 # Animation (2D)
 env.animate(True)
@@ -113,17 +114,41 @@ env.animate(True)
 env.width(1000)
 env.height(600)
 env.position((100, 100))
+# Show
+env.show_menu_buttons(False)
+env.show_time(False)
 # Objects
 sim.AnimateRectangle(
-    spec = (0, 0, 1000, 100),
-    text = "Floor",
-    fillcolor = "lightgray",
-    textcolor = "black",
-    fontsize = 20
+    spec = (0, 0, 1000, 600),
+    fillcolor = "white"
 )
 sim.AnimateRectangle(
     spec = (0, 500, 1000, 600),
-    text = "Ceiling",
+    fillcolor = "lightblue"
+)
+sim.AnimateImage(
+    image = "file://../images/fhooe.png",
+    x = 0,
+    y = 500,
+    width = 100
+)
+sim.AnimateText(
+    x = 125,
+    y = 550,
+    text = "Robot simulation with Python/Salabim",
+    text_anchor = "sw",
+    fontsize = 25
+)
+sim.AnimateText(
+    x = 125,
+    y = 540,
+    text = "Discrete event simulation of robot, conveyor, and product states",
+    text_anchor = "nw",
+    fontsize = 15
+)
+sim.AnimateRectangle(
+    spec = (0, 0, 1000, 100),
+    text = "Floor",
     fillcolor = "lightgray",
     textcolor = "black",
     fontsize = 20
@@ -145,5 +170,5 @@ if True:
 else:
     # Video production enabled
     env.video("test.mp4")
-    env.run(till = 30)
+    env.run(till = 130)
     env.video_close()
