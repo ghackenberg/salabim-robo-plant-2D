@@ -142,7 +142,7 @@ sim.AnimateText(
 sim.AnimateText(
     x = 125,
     y = 540,
-    text = "Discrete event simulation of robot, conveyor, and product states",
+    text = "Learn more at https://github.com/ghackenberg/salabim-robo-plant-2D",
     text_anchor = "nw",
     fontsize = 15
 )
