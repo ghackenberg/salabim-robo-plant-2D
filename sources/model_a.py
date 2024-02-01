@@ -1,6 +1,6 @@
 import salabim as sim
 
-from salabim_plant import *
+from salabim_robo_plant_2D import *
 
 class RobotA(Robot):
     def process(self):
